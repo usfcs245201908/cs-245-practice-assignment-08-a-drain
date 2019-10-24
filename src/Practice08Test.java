@@ -5,13 +5,13 @@ import java.util.StringTokenizer;
 
 
 public class Practice08Test {
-	
-	
+
+
 	public Practice08Test () {
 		System.out.println("Starting Practice08Test: binary search trees");
 	}
-	
-	
+
+
 	public boolean constructorTest() {
 		try {
 			@SuppressWarnings("unused")
@@ -25,8 +25,8 @@ public class Practice08Test {
 			return false;
 		}
 	}
-	
-	
+
+
 	public boolean insertOneTest() {
 		String testString = "test string 1";
 		String anotherString = "test string 2";
@@ -45,20 +45,20 @@ public class Practice08Test {
 			return false;
 		}
 	}
-	
-	
+
+
 	public boolean insertTwoTest() {
 		String allKeys = "The quick brown fox jumped over the lazy dog.";
 
 		try {
 			BST<String> bst = new BST<String>();
-			
+
 			Random random = new Random();
 			ArrayList<String> list = new ArrayList<String>();
-	
-			String delims = " .";
+
+			String delims = "";
 			StringTokenizer st = new StringTokenizer(allKeys, delims);
-			
+
 			while(st.hasMoreElements()) {
 				String token = st.nextToken();
 				bst.insert(token);
@@ -85,8 +85,8 @@ public class Practice08Test {
 			return false;
 		}
 	}
-	
-	
+
+
 	public boolean deleteTest() {
 		BST<String> bst = new BST<String>();
 		String [] insertables = {"hello", "world"};
@@ -102,8 +102,8 @@ public class Practice08Test {
 			return true;
 		}
 	}
-	
-	
+
+
 	public boolean orderTest() {
 		String fromWikipedia = "Grace Brewster Murray Hopper (née Murray December 9, 1906 – January 1, 1992) ";// +
 			/*
@@ -123,11 +123,11 @@ public class Practice08Test {
 				"linker (originally called a compiler), which was written for the A-0 System. During her wartime " +
 				"service, she co-authored three papers based on her work on the Harvard Mark 1.";
 			*/
-		
+
 		BST<String> bst = new BST<String>();String delims = " (,.)";
-		
+
 		StringTokenizer st = new StringTokenizer(fromWikipedia, delims);
-		
+
 		while(st.hasMoreElements()) {
 			String token = st.nextToken();
 			bst.insert(token);
@@ -136,8 +136,8 @@ public class Practice08Test {
 		bst.print();
 		return true;  // Probably...
 	}
-	
-	
+
+
 	public void runTest() {
 		if (constructorTest() &&
 				insertOneTest() &&
@@ -149,7 +149,7 @@ public class Practice08Test {
 		}
 	}
 
-	
+
 	public static void main(String[] args) {
 		Practice08Test test = new Practice08Test();
 		test.runTest();
